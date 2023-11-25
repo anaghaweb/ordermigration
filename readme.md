@@ -13,11 +13,10 @@ The available object types to migrate currently are
 `Only create orders for US region`
 
 Before using any commands - fill the necessary .env file data
-currently works only for
 
 ### Env file
 
-On the repository you will find an .env.template file, copy and paste the content on .env file at root and fill the variables, if a command requires an env variable and it is not set then a error will throw
+On the repository you will find an .env.template file, copy and paste the content on to a .env file at root and fill the variables, if a command requires an env variable and it is not set then a error will throw
 
 `Below values have to be filled in with your admin-user and admin-pwd the .env file. They are used in files - api.js and uid.js to retreive Authentication-token and current-user-login-ID without which the module will fail to run`
 
@@ -33,6 +32,6 @@ node createorder.js
 
 To delete all the draft-orders, run:-
 node deletedraftorder.js
-/* WARNING - using the above command deletes ALL the draft-orders from the draft-order tab */
+/* WARNING - using the above command deletes ALL the draft-orders from the draft-order tab in the medusajs backend */
 
 ```
