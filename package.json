@@ -1,0 +1,21 @@
+{
+  "name": "ordermigration",
+  "version": "1.0.0",
+  "description": "migrate orders from woocommerce to medusajs backend draft-orders section",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "BSK",
+  "license": "MIT",
+  "dependencies": {
+    "@medusajs/medusa-js": "^6.1.4",
+    "axios": "^1.5.1",
+    "create-hmac": "^1.1.7",
+    "dotenv": "^16.3.1",
+    "node-fetch": "^3.3.2",
+    "oauth-1.0a": "^2.2.6",
+    "yargs": "^17.7.2"
+  }
+}
