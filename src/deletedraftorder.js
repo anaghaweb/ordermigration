@@ -19,7 +19,7 @@ async function fetchDraftOrderIds() {
         return draft_orders.map( order => order.id );
     } catch ( error ) {
         console.error( error );
-        throw error;  // Re-throw the error to handle it outside this function
+        throw error;
     }
 }
 
@@ -58,5 +58,4 @@ async function main() {
     }
 }
 
-// Call the main function
 main();

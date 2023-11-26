@@ -1,3 +1,9 @@
+# Date: 26/11/2023 rewrote shippingoptionsid.js
+
+**Shipping options will return the lowest price rate option from the available shipping options instead of generating a new shipping option for each new order generated**
+
+`Now supports shipping locations for US, Canada, Major Coutries in Europe and India`
+
 # OrderMigration
 
 This is an internal tool to migrate order data from woocommerce to medusajs backend.
@@ -10,7 +16,16 @@ The available object types to migrate currently are
 
 ## Usage
 
-`Only create orders for US region`
+Things to be done/know before using the module.
+
+1. `Seed data provided by medusa using below commands`
+   # start the backend
+   # login using admin user and password
+   `use the below command to seed data for testing purpose`
+   # medusa seed --seed-file=data/seed.json
+   # or npx medusa seed --seed-file=data/seed.json
+
+**_IMPORTANT_** -> `Only create orders for US region`
 
 Before using any commands - fill the necessary .env file data
 

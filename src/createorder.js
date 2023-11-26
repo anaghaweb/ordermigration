@@ -3,7 +3,7 @@ import fs from 'fs';
 import { DATA_FROM_WOO } from './datafromwoo.js';
 import { Fetch_Credentials } from './api.js';
 import { retreive_region_id } from './regionid.js';
-import { createShippingOption } from './shippingoptionsid.js';
+import { Shipping_Options_ID_Generator } from './shippingoptionsid.js';
 import dotenv from 'dotenv';
 dotenv.config( { path: '../.env' } );
 
@@ -16,11 +16,11 @@ export const createOrder = async ( orderData ) => {
 
             const requestData = {
                 email: order.billing.email,
-                region_id: "reg_01HFRYVCG6RSTA2G62HAVA36VW",
+                region_id: await retreive_region_id( order.billing.country.toLowerCase() ),
                 items: order.line_items.map( item => ( {
                     quantity: item.quantity,
                     variant_id: '',
-                    unit_price: ( item.price * 100 ),
+                    unit_price: item.price * 100, /*medusajs stores prices in smallest common currency usd in cents, inr in paise etc  */
                     title: item.name,
 
                 } ) ),
@@ -48,7 +48,7 @@ export const createOrder = async ( orderData ) => {
 
                 shipping_methods: [
                     {
-                        option_id: "so_01HG419RP7W9356Y3GF3PTYHB9",
+                        option_id: await Shipping_Options_ID_Generator( order.billing.country.toLowerCase() ),
                     },
                 ],
             };
